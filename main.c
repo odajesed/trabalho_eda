@@ -8,7 +8,9 @@
 
 #define t 2
 #define BUFF_SIZE 25
+
 char * readLine(in_tabela **start);
+
 int main(int argc,char *argv[])
 {
     
@@ -29,43 +31,19 @@ int main(int argc,char *argv[])
     ar_data *bloco;
     char input[BUFF_SIZE];
     
-
+    // ELE SO PEGA UM POR ARQUIVO E N UTILIZA DO PROXID
     while(start)
     {
         strcpy(input,readLine(&start));       
-        //COMO ASSIM?
         bloco = ar_data_novo(start->id, -1, strdup(input));        
         tree = arv_b_insere(tree, bloco, t);
         start = start->prox;
-        //nesse estado ele   ta printando o texto do ultimo cara
     }
     in_t_free(&start);
     printf("\n\n");
     arv_b_imprimir(tree);
 
 	
-/*
-    char *a,*b,*c,*d;
-    ar_data *bloco1,*bloco2,*bloco3,*bloco4;
-    arv_b *tree = arv_b_inicializa();
-
-    a = strdup("AAAA");
-    b = strdup("BBBB");
-    c = strdup("CCCC");
-    d = strdup("DDDD");
-
-    bloco1 = ar_data_novo(1, -1, &a);
-    bloco2 = ar_data_novo(2, -1, &b);
-    bloco3 = ar_data_novo(3, -1, &c);
-    bloco4 = ar_data_novo(4, -1, &d);
-
-    tree = arv_b_insere(tree, bloco1, t);
-    tree = arv_b_insere(tree, bloco2, t);
-    tree = arv_b_insere(tree, bloco3, t);
-    tree = arv_b_insere(tree, bloco4, t);
-
-    arv_b_imprimir(tree);
-    */
     return 0;
 }
 

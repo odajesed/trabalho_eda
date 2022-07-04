@@ -8,9 +8,9 @@
 typedef struct arquivo_data
 {
     int no_pai,id,prox_id;
-    char **texto;
+    char *texto;
 }ar_data;
 
-ar_data * ar_data_novo(int id, int no_pai, char **content);
+ar_data * ar_data_novo(int id, int no_pai, char *content);
 
 #endif

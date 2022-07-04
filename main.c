@@ -27,22 +27,23 @@ int main(int argc,char *argv[])
 
     arv_b *tree = arv_b_inicializa();
     ar_data *bloco;
-    char *input;
+    char input[BUFF_SIZE];
     
 
     while(start)
     {
         strcpy(input,readLine(&start));       
         //COMO ASSIM?
-        bloco = ar_data_novo(start->id, -1, &input);        
+        bloco = ar_data_novo(start->id, -1, strdup(input));        
         tree = arv_b_insere(tree, bloco, t);
         start = start->prox;
         //nesse estado ele   ta printando o texto do ultimo cara
     }
+    in_t_free(&start);
     printf("\n\n");
     arv_b_imprimir(tree);
 
-	in_t_free(&start);
+	
 /*
     char *a,*b,*c,*d;
     ar_data *bloco1,*bloco2,*bloco3,*bloco4;

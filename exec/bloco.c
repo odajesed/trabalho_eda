@@ -4,7 +4,7 @@
 
 
 
-ar_data *ar_data_novo(int id, int no_pai, char **content)
+ar_data *ar_data_novo(int id, int no_pai, char *content)
 {
     ar_data *novo = (ar_data *) malloc(sizeof(ar_data));
 

@@ -1,7 +1,7 @@
 #include "../headers/b_tree.h" 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 arv_b *arv_b_inicializa()
 {
@@ -136,7 +136,7 @@ void arv_b_imprec(arv_b *a, int t){
     for(i=0; i<=a->n_bloco-1; i++){
       arv_b_imprec(a->filho[i],t+1);
       for(j=0; j<=t; j++) printf("\t");
-      printf("(%d->%s)\n",a->super_bloco[i]->id,*(a->super_bloco[i])->texto);
+      printf("(%d->%s)\n",a->super_bloco[i]->id,(a->super_bloco[i])->texto);
     }
     arv_b_imprec(a->filho[i],t+1);
   }
